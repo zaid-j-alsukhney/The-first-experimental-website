@@ -158,29 +158,39 @@ hr{
 }
 
 .works ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 18px;
   list-style-type: none;
   align-items: center;
-  justify-content: space-between;
 }
 .works li {
   border-radius: 16px;
   background-color: rgba(57, 57, 57, 0.5);
   backdrop-filter: blur(4px);
-  padding: 1rem 4rem;
+  padding: 1rem;
+  min-width: 0;
+  overflow: hidden;
 }
-
+.works li a {
+  display: block;
+}
 .works li img {
-  width: 200px;
-  height: 200px;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   object-fit: contain;
-  transition: transform 0.2s;
+  transition: transform 0.2s ease;
 }
-
-.works li :hover {
-  transform: scale(1.5);
+.works li:hover img {
+  transform: scale(1.06);
+}
+.logoLink {
+  display: inline-flex;
+  align-items: center;
+}
+.logoLink img {
+  display: block;
 }
 
 
@@ -300,8 +310,9 @@ footer {
     margin-left: 1rem;
   }
   .works ul {
-    flex-direction: column;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
+    padding: 0 1rem;
   }
   .contactContainer {
     margin: 10rem 5rem;
