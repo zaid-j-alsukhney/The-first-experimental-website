@@ -50,7 +50,7 @@
         </div>
    </div>
    <picture class="heroCover">
-     <img src="assets/assets/svg/Hero.svg" data-en-src="assets/assets/svg/Hero.svg" data-ar-src="assets/assets/svg/Hero-ar.svg" alt="hero image" class="heroImg" />
+     <img src="assets/assets/svg/Hero.svg" alt="hero image" class="heroImg" />
    </picture>
 
 
@@ -151,20 +151,20 @@ body.light-theme .blue{color:#00adb5;}
 <script>
 (function(){
  const body=document.body, theme=document.getElementById('themeSwitch'), lang=document.getElementById('languageSwitch');
- function applyTheme(light){ body.classList.toggle('light-theme',light); localStorage.setItem('zaid-theme',light?'light':'dark'); }
+ const THEME_KEY='zaid-theme-v2';
+ function applyTheme(light){ body.classList.toggle('light-theme',light); localStorage.setItem(THEME_KEY,light?'light':'dark'); }
  function applyLang(ar){
    document.documentElement.lang=ar?'ar':'en';
    document.documentElement.dir='ltr'; document.body.classList.toggle('arabic-mode', ar);
    document.querySelectorAll('.lang-en').forEach(el=>el.style.display=ar?'none':'block');
    document.querySelectorAll('.lang-ar').forEach(el=>el.style.display=ar?'block':'none');
    document.querySelectorAll('[data-en][data-ar]').forEach(el=>el.textContent=ar?el.dataset.ar:el.dataset.en);
-   const hero=document.querySelector('.heroImg');
-   if(hero) hero.src=ar?hero.dataset.arSrc:hero.dataset.enSrc;
    lang.checked=ar; localStorage.setItem('zaid-lang',ar?'ar':'en');
  }
- const savedTheme=localStorage.getItem('zaid-theme');
+ const savedTheme=localStorage.getItem(THEME_KEY);
  const savedLang=localStorage.getItem('zaid-lang');
- theme.checked=savedTheme==='light'; applyTheme(theme.checked); applyLang(savedLang==='ar');
+ const initialLight = savedTheme === 'light';
+ theme.checked=initialLight; applyTheme(initialLight); applyLang(savedLang==='ar');
  theme.addEventListener('change',()=>applyTheme(theme.checked));
  lang.addEventListener('change',()=>applyLang(lang.checked));
 })();

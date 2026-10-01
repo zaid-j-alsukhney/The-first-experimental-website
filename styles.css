@@ -270,6 +270,7 @@ footer {
     gap: 2rem;
   }
   .heroImg {
+    transition: transform .25s ease;
     width: 400px;
   }
   .name, .title {
