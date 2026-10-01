@@ -123,11 +123,9 @@ hr{
   font-size: 2rem;
 }
 
-.aboutName {
-  color: #eeeeee
-}
-.aboutTitle {
-  color: #00adb5;
+.aboutHeading {
+  color: #eeeeee;
+  margin: 0;
 }
 .aboutMePar {
   text-align: justify;
@@ -290,7 +288,7 @@ footer {
     margin: 0rem 5rem;
     gap: 2rem;
   }
-  .aboutName, .aboutTitle {
+  .aboutHeading {
     font-size: 2rem;
   }
   .light {
@@ -325,3 +323,50 @@ footer {
   }
 
 }
+/* Theme & language switches */
+.site-controls { display:flex; align-items:center; gap:12px; margin-left:auto; margin-right:1.5rem; }
+.switch-control { display:inline-flex; align-items:center; gap:7px; color:#eeeeee; font-size:.78rem; font-family:'Poppins',serif; }
+.switch-control .switch { position:relative; width:48px; height:26px; display:inline-block; }
+.switch-control .switch input { opacity:0; width:0; height:0; }
+.switch-slider { position:absolute; inset:0; cursor:pointer; background:#393e46; border:1px solid rgba(238,238,238,.18); border-radius:30px; transition:.25s; }
+.switch-slider:before { content:""; position:absolute; width:18px; height:18px; left:3px; top:3px; border-radius:50%; background:#eeeeee; transition:.25s; box-shadow:0 1px 4px rgba(0,0,0,.35); }
+.switch-control input:checked + .switch-slider { background:#00adb5; }
+.switch-control input:checked + .switch-slider:before { transform:translateX(22px); }
+.switch-label { min-width:38px; }
+
+body.light-theme { background:#f5f7fa; color:#222831; }
+body.light-theme .navigation a,
+body.light-theme .name,
+body.light-theme .aboutHeading,
+body.light-theme .contact h3,
+body.light-theme .contact a,
+body.light-theme footer,
+body.light-theme .switch-control { color:#222831; }
+body.light-theme .cv,
+body.light-theme .socialMedia a { background:rgba(34,40,49,.08); }
+body.light-theme .aboutMePar { color:rgba(34,40,49,.72); }
+body.light-theme .works li { background:rgba(255,255,255,.72); }
+body.light-theme hr { border-color:rgba(34,40,49,.15); }
+body.light-theme .switch-slider { background:#d7dce2; border-color:rgba(34,40,49,.15); }
+body.light-theme .switch-control input:checked + .switch-slider { background:#00adb5; }
+
+[dir="rtl"] { direction:rtl; }
+[dir="rtl"] .navigation ul { flex-direction:row; }
+[dir="rtl"] .site-controls { margin-left:0; margin-right:auto; }
+[dir="rtl"] .heroSub, [dir="rtl"] .textContainer { text-align:right; }
+[dir="rtl"] .heroBtns { flex-direction:row-reverse; }
+[dir="rtl"] .projectTitle, [dir="rtl"] .textTitle, [dir="rtl"] .contactTitle { flex-direction:row-reverse; }
+[dir="rtl"] .aboutMePar { text-align:right; }
+
+@media (max-width: 900px) {
+  header { flex-wrap:wrap; gap:1rem; }
+  .site-controls { order:3; width:100%; justify-content:center; margin:0; }
+  .works { padding:5rem 1rem; }
+  .works ul { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .contact { gap:2rem; margin-right:0; flex-wrap:wrap; }
+}
+
+/* Arabic mode: keep the site layout LTR while aligning Arabic text naturally. */
+body.arabic-mode .lang-ar { direction: rtl; text-align: right; }
+body.arabic-mode .projectGrid, body.arabic-mode .works ul { direction: ltr; }
+body.arabic-mode .projectGrid .lang-ar a { direction: ltr; }

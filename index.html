@@ -4,17 +4,27 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="styles.css" />
-     <title>Document</title>
+     <title id="pageTitle">Zaid Portfolio</title>
  </head>
   <section>
 
    <header>
+       <div class="site-controls" aria-label="Site controls">
+         <label class="switch-control" title="Toggle theme">
+           <span class="switch-label" data-en="Dark" data-ar="داكن">Dark</span>
+           <span class="switch"><input id="themeSwitch" type="checkbox" aria-label="Toggle light mode"><span class="switch-slider"></span></span>
+         </label>
+         <label class="switch-control" title="Toggle language">
+           <span class="switch-label" data-en="EN" data-ar="عربي">EN</span>
+           <span class="switch"><input id="languageSwitch" type="checkbox" aria-label="Toggle Arabic language"><span class="switch-slider"></span></span>
+         </label>
+       </div>
        <a class="logoLink" href="https://github.com/" target="_blank" rel="noopener" aria-label="Zaid on GitHub"><img src="assets/assets/svg/logo.svg" alt="Zaid logo" /></a>
        <nav class="navigation">
            <ul>
-               <li><a href="#aboutMe">About Me</a></li>
-               <li><a href="#MyWorks">My Works</a></li>
-               <li><a href="#contactMe">Contact</a></li>
+               <li><a href="#aboutMe" data-en="About Me" data-ar="نبذة عني">About Me</a></li>
+               <li><a href="#MyWorks" data-en="My Works" data-ar="مشاريعي">My Works</a></li>
+               <li><a href="#contactMe" data-en="Contact" data-ar="تواصل معي">Contact</a></li>
            </ul>    
        </nav>
 
@@ -24,16 +34,24 @@
    <section class="hero">
      <img class="arrow" src="assets/assets/svg/arrow.svg" alt="arrow" />
      <div class="heroSub">
-        <h1 class="name">I'm Zaid</h1>
-        <h1 class="title">Software Engineer</h1>
+        <div class="lang lang-en hero-copy">
+          <h1 class="name"><span class="white">I'm Zaid</span></h1>
+          <h1 class="title"><span class="blue">Software Engineer</span></h1>
+        </div>
+        <div class="lang lang-ar hero-copy" dir="rtl">
+          <h1 class="name"><span class="white">أنا زيد،</span></h1>
+          <h1 class="title"><span class="blue">مهندس ومطور برمجيات،</span></h1>
+        </div>
         <div class="heroBtns">
-           <a class="hireMe" href="#contactMe">Hire me</a>
-           <a class="cv" href="assets/assets/Musaab Kubbi CV.pdf" download>Download CV
+           <a class="hireMe" href="#contactMe" data-en="Hire me" data-ar="تواصل معي">Hire me</a>
+           <a class="cv" href="assets/assets/Musaab Kubbi CV.pdf" download><span data-en="Download CV" data-ar="تحميل السيرة الذاتية">Download CV</span>
              <img src="assets/assets/svg/download.svg" alt="download button"
            /></a>
         </div>
    </div>
-   <img src="assets/assets/svg/Hero.svg" alt="hero image" class="heroImg" />
+   <picture class="heroCover">
+     <img src="assets/assets/svg/Hero.svg" data-en-src="assets/assets/svg/Hero.svg" data-ar-src="assets/assets/svg/Hero-ar.svg" alt="hero image" class="heroImg" />
+   </picture>
 
 
    </section>
@@ -46,16 +64,12 @@
      />
      <div class="textContainer">
        <div class="textTitle">
-         <h1 class="aboutName">About</h1>
-         <h1 class="aboutTitle">me</h1>
+         <h1 class="aboutHeading lang lang-en"><span class="white">About</span> <span class="blue">me</span></h1>
+         <h1 class="aboutHeading lang lang-ar" dir="rtl"><span class="white">نبذة</span> <span class="blue">عني</span></h1>
          <img src="assets/assets/svg/lightbulb.svg" alt="lightbulb" class="light" />
        </div>
-       <p class="aboutMePar">
-        I'm Zaid
-        Software Engineer & Developer
-         I build things with code, electronics, and curiosity.
-
-
+       <p class="aboutMePar" data-en="I'm Zaid, a Software Engineer & Developer. I build things with code, electronics, and curiosity." data-ar="أنا زيد، مهندس ومطور برمجيات، أقوم ببناء الأشياء باستخدام البرمجة والإلكترونيات والفضول.">
+        I'm Zaid, a Software Engineer & Developer. I build things with code, electronics, and curiosity.
        </p>
      </div>
    </section>
@@ -64,43 +78,28 @@
    <section class="works" id="MyWorks">
      <div class="worksContainer">
        <div class="projectTitle">
-         <h1 class="aboutName">My recent</h1>
-         <h1 class="aboutTitle">works</h1>
+         <h1 class="aboutHeading lang lang-en"><span class="white">My recent</span> <span class="blue">works</span></h1>
+         <h1 class="aboutHeading lang lang-ar" dir="rtl"><span class="white">أحدث</span> <span class="blue">مشاريعي</span></h1>
        </div>
        <ul class="projectGrid">
-         <li>
-           <a href="https://zaid-j-alsukhney.github.io/Sasanian-History-project/" target="_blank" rel="noopener">
-             <img src="assets/assets/imgs/history.svg" alt="مشروع التاريخ — الحياة العامة في الدولة الساسانية" />
-           </a>
-         </li>
-         <li>
-           <a href="https://zaid-j-alsukhney.github.io/Tourism-project/" target="_blank" rel="noopener">
-             <img src="assets/assets/imgs/geography.svg" alt="مشروع الجغرافيا — مقومات السياحة" />
-           </a>
-         </li>
-         <li>
-           <a href="https://zaid-j-alsukhney.github.io/Democracy-project/" target="_blank" rel="noopener">
-             <img src="assets/assets/imgs/civics.svg" alt="مشروع التربية الوطنية والمدنية — الديمقراطية" />
-           </a>
-         </li>
-         <li>
-           <a href="https://zaid-j-alsukhney.github.io/Islamic-Education-project/" target="_blank" rel="noopener">
-             <img src="assets/assets/imgs/islamic.svg" alt="مشروع التربية الإسلامية — سورة البقرة" />
-           </a>
-         </li>
-         <li>
-           <a href="https://zaid-j-alsukhney.github.io/Quantum-Atom-Simulator-v18.0/" target="_blank" rel="noopener">
-             <img src="assets/assets/imgs/chemistry.svg" alt="مشروع الكيمياء — محاكي الذرة" />
-           </a>
-         </li>
-       </ul>
+<li class="lang lang-en"><a href="https://zaid-j-alsukhney.github.io/Sasanian-History-project/" target="_blank" rel="noopener"><img src="assets/assets/imgs/history-en.svg" alt="History project" /></a></li>
+<li class="lang lang-en"><a href="https://zaid-j-alsukhney.github.io/Tourism-project/" target="_blank" rel="noopener"><img src="assets/assets/imgs/geography-en.svg" alt="Geography project" /></a></li>
+<li class="lang lang-en"><a href="https://zaid-j-alsukhney.github.io/Democracy-project/" target="_blank" rel="noopener"><img src="assets/assets/imgs/civics-en.svg" alt="Civic Education project" /></a></li>
+<li class="lang lang-en"><a href="https://zaid-j-alsukhney.github.io/Islamic-Education-project/" target="_blank" rel="noopener"><img src="assets/assets/imgs/islamic-en.svg" alt="Islamic Education project" /></a></li>
+<li class="lang lang-en"><a href="https://zaid-j-alsukhney.github.io/Quantum-Atom-Simulator-v18.0/" target="_blank" rel="noopener"><img src="assets/assets/imgs/chemistry-en.svg" alt="Chemistry project" /></a></li>
+<li class="lang lang-ar"><a href="https://zaid-j-alsukhney.github.io/Sasanian-History-project/" target="_blank" rel="noopener"><img src="assets/assets/imgs/history-ar.svg" alt="مشروع التاريخ" /></a></li>
+<li class="lang lang-ar"><a href="https://zaid-j-alsukhney.github.io/Tourism-project/" target="_blank" rel="noopener"><img src="assets/assets/imgs/geography-ar.svg" alt="مشروع الجغرافيا" /></a></li>
+<li class="lang lang-ar"><a href="https://zaid-j-alsukhney.github.io/Democracy-project/" target="_blank" rel="noopener"><img src="assets/assets/imgs/civics-ar.svg" alt="مشروع التربية الوطنية والمدنية" /></a></li>
+<li class="lang lang-ar"><a href="https://zaid-j-alsukhney.github.io/Islamic-Education-project/" target="_blank" rel="noopener"><img src="assets/assets/imgs/islamic-ar.svg" alt="مشروع التربية الإسلامية" /></a></li>
+<li class="lang lang-ar"><a href="https://zaid-j-alsukhney.github.io/Quantum-Atom-Simulator-v18.0/" target="_blank" rel="noopener"><img src="assets/assets/imgs/chemistry-ar.svg" alt="مشروع الكيمياء" /></a></li>
+</ul>
      </div>
    </section>
 
    <section class="contactContainer" id="contactMe">
      <div class="contactTitle">
-       <h1 class="aboutName">Contact</h1>
-       <h1 class="aboutTitle">me</h1>
+       <h1 class="aboutHeading lang lang-en"><span class="white">Contact</span> <span class="blue">me</span></h1>
+       <h1 class="aboutHeading lang lang-ar" dir="rtl"><span class="white">تواصل</span> <span class="blue">معي</span></h1>
      </div>
      <div class="contact">
        <div class="emailAndPhone">
@@ -135,8 +134,40 @@
 
     <hr />
     <footer>
-      <p>Built by ZA.</p>
+      <p data-en="Built by ZA." data-ar="تم التطوير بواسطة ZA.">Built by ZA.</p>
     </footer>
 
-  </body>
-</html>  
+  
+<style>
+.lang-ar{display:none;}
+.lang-en{display:block;}
+.white{color:#eeeeee;}
+.blue{color:#00adb5;}
+.projectGrid .lang{display:block;}
+.projectGrid .lang-ar{display:none;}
+body.light-theme .white{color:#222831;}
+body.light-theme .blue{color:#00adb5;}
+</style>
+<script>
+(function(){
+ const body=document.body, theme=document.getElementById('themeSwitch'), lang=document.getElementById('languageSwitch');
+ function applyTheme(light){ body.classList.toggle('light-theme',light); localStorage.setItem('zaid-theme',light?'light':'dark'); }
+ function applyLang(ar){
+   document.documentElement.lang=ar?'ar':'en';
+   document.documentElement.dir='ltr'; document.body.classList.toggle('arabic-mode', ar);
+   document.querySelectorAll('.lang-en').forEach(el=>el.style.display=ar?'none':'block');
+   document.querySelectorAll('.lang-ar').forEach(el=>el.style.display=ar?'block':'none');
+   document.querySelectorAll('[data-en][data-ar]').forEach(el=>el.textContent=ar?el.dataset.ar:el.dataset.en);
+   const hero=document.querySelector('.heroImg');
+   if(hero) hero.src=ar?hero.dataset.arSrc:hero.dataset.enSrc;
+   lang.checked=ar; localStorage.setItem('zaid-lang',ar?'ar':'en');
+ }
+ const savedTheme=localStorage.getItem('zaid-theme');
+ const savedLang=localStorage.getItem('zaid-lang');
+ theme.checked=savedTheme==='light'; applyTheme(theme.checked); applyLang(savedLang==='ar');
+ theme.addEventListener('change',()=>applyTheme(theme.checked));
+ lang.addEventListener('change',()=>applyLang(lang.checked));
+})();
+</script>
+</body>
+</html>
